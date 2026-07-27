@@ -1,9 +1,78 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-const leads=[
-  {name:"Chinedu Okafor",source:"Telegram",interest:"Copy Trading",stage:"Qualified",value:"₦3.5m"},
-  {name:"Amara Williams",source:"Email",interest:"Expert Advisor",stage:"Follow-up",value:"₦920k"},
-  {name:"Tunde Balogun",source:"Outbound Call",interest:"Indicator Suite",stage:"Demo booked",value:"₦480k"},
-  {name:"Sarah Mensah",source:"Website",interest:"Core Profile",stage:"New",value:"₦2.1m"},
+
+const accounts = [
+  { name: "A. Nwosu", source: "Telegram", interest: "Core Profile", stage: "Qualified", value: "$5,000" },
+  { name: "M. Thompson", source: "Website", interest: "Alpha Profile", stage: "Evaluation", value: "$12,500" },
+  { name: "F. Kareem", source: "Referral", interest: "Copy Trading", stage: "Connected", value: "$8,000" },
+  { name: "D. Ross", source: "Telegram", interest: "Expert Advisor", stage: "Follow-up", value: "$2,500" },
 ];
-export default function Dashboard(){return <main className="dashboardPage"><aside className="dashSide"><Logo/><nav><span className="active">Overview</span><span>Leads</span><span>Campaigns</span><span>Calls</span><span>Emails</span><span>Telegram</span><span>Products</span><span>Settings</span></nav><Link href="/">← Website</Link></aside><section className="dashMain"><header><div><span className="kicker">SALES OPERATIONS</span><h1>Gencouv Command Center</h1></div><button>+ New campaign</button></header><div className="dashMetrics"><article><span>Total pipeline</span><strong>₦7.0m</strong><small>+18.4% this month</small></article><article><span>Qualified leads</span><strong>284</strong><small>47 added this week</small></article><article><span>Telegram starts</span><strong>126</strong><small>44.3% conversion</small></article><article><span>Meetings booked</span><strong>38</strong><small>13.4% of leads</small></article></div><div className="dashLayout"><article className="dashPanel wide"><div className="dashPanelHead"><h2>Revenue pipeline</h2><span>Last 30 days</span></div><div className="bars">{[42,64,48,78,58,88,72,96,82,110,94,128].map((h,i)=><i key={i} style={{height:`${h}px`}}></i>)}</div><div className="axis"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div></article><article className="dashPanel"><div className="dashPanelHead"><h2>Agent status</h2><span className="greenText">All systems online</span></div><div className="agentList"><div><i></i><span>Lead generation</span><b>Apify</b></div><div><i></i><span>Email sequence</span><b>Workspace</b></div><div><i></i><span>Call outbound</span><b>Retell</b></div><div><i></i><span>Telegram onboarding</span><b>Active</b></div></div></article><article className="dashPanel full"><div className="dashPanelHead"><h2>Recent leads</h2><button>View all</button></div><div className="leadTable"><div className="tr head"><span>Lead</span><span>Source</span><span>Interest</span><span>Stage</span><span>Potential</span></div>{leads.map(l=><div className="tr" key={l.name}><span><b>{l.name}</b><small>Contact record</small></span><span>{l.source}</span><span>{l.interest}</span><span><em>{l.stage}</em></span><span>{l.value}</span></div>)}</div></article></div></section></main>}
+
+export default function Dashboard() {
+  return (
+    <main className="dashboardPage">
+      <aside className="dashSide">
+        <Logo />
+        <nav>
+          <span className="active">Overview</span>
+          <span>Copy Accounts</span>
+          <span>Evaluations</span>
+          <span>Connections</span>
+          <span>Executions</span>
+          <span>Risk Profiles</span>
+          <span>Products</span>
+          <span>Settings</span>
+        </nav>
+        <Link href="/">← Website</Link>
+      </aside>
+
+      <section className="dashMain">
+        <header>
+          <div><span className="kicker">COPY-TRADING OPERATIONS</span><h1>Gencouv Command Center</h1></div>
+          <button type="button">+ New evaluation</button>
+        </header>
+
+        <div className="dashMetrics">
+          <article><span>Connected capital</span><strong>$428,500</strong><small>Illustrative dashboard data</small></article>
+          <article><span>Qualified accounts</span><strong>84</strong><small>12 added this month</small></article>
+          <article><span>Active connections</span><strong>61</strong><small>72.6% qualification rate</small></article>
+          <article><span>Client funds held</span><strong>$0</strong><small>Capital remains with brokers</small></article>
+        </div>
+
+        <div className="dashLayout">
+          <article className="dashPanel wide">
+            <div className="dashPanelHead"><h2>Connected capital</h2><span>Last 12 months · USD</span></div>
+            <div className="bars">{[42, 64, 48, 78, 58, 88, 72, 96, 82, 110, 94, 128].map((height, index) => <i key={index} style={{ height: `${height}px` }} />)}</div>
+            <div className="axis"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+          </article>
+
+          <article className="dashPanel">
+            <div className="dashPanelHead"><h2>System status</h2><span className="greenText">Operational</span></div>
+            <div className="agentList">
+              <div><i /><span>Copy engine</span><b>Online</b></div>
+              <div><i /><span>Broker sync</span><b>Healthy</b></div>
+              <div><i /><span>Risk monitoring</span><b>Enabled</b></div>
+              <div><i /><span>Telegram onboarding</span><b>Active</b></div>
+            </div>
+          </article>
+
+          <article className="dashPanel full">
+            <div className="dashPanelHead"><h2>Recent evaluations</h2><button type="button">View all</button></div>
+            <div className="leadTable">
+              <div className="tr head"><span>Client</span><span>Source</span><span>Interest</span><span>Stage</span><span>Capital</span></div>
+              {accounts.map((account) => (
+                <div className="tr" key={account.name}>
+                  <span><b>{account.name}</b><small>Suitability record</small></span>
+                  <span>{account.source}</span>
+                  <span>{account.interest}</span>
+                  <span><em>{account.stage}</em></span>
+                  <span>{account.value}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  );
+}
