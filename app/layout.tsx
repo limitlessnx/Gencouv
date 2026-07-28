@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Gencouv | Broker-Connected Copy Trading",
-  description: "Copy trading, expert advisors, indicators and systematic trading tools with broker-controlled client funds.",
+  description: "Copy systematic trading strategies while your capital remains in your own broker account.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
