@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gencouv | Broker-Connected Copy Trading",
-  description: "Copy systematic trading strategies while your capital remains in your own broker account.",
+  title: "Gencouv | AI Trading Automation, EAs & Indicators",
+  description: "Explore automated trading systems, Expert Advisors, AI-assisted indicators and guided onboarding for systematic market participation.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
